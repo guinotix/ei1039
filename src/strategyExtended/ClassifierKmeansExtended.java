@@ -1,30 +1,11 @@
 package strategyExtended;
 
-public class ClassifierKmeansExtended implements StrategyExtended {
+public class ClassifierKmeansExtended implements ClassifierStrategy {
 
-    public String strategyToUse;
-
-    public ClassifierKmeansExtended(String strategy) {
-        this.strategyToUse = strategy;
-    }
+    public DistanceStrategy ds;
 
     @Override
-    public void execute() {
-        if (strategyToUse.equals("Euclidean")) {
-            distanceEuclidean();
-        } else if (strategyToUse.equals("Manhattan")) {
-            distanceManhattan();
-        }
-        System.out.println("ClassifierKmeans executed");
-    }
-
-    @Override
-    public void distanceEuclidean() {
-        System.out.println("DistanceEuclidean computed");
-    }
-
-    @Override
-    public void distanceManhattan() {
-        System.out.println("DistanceManhattan computed");
+    public void execute(DistanceStrategy ds) {
+        ds.compute();
     }
 }

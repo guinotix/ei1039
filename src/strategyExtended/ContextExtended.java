@@ -2,17 +2,21 @@ package strategyExtended;
 
 public class ContextExtended {
 
-    public StrategyExtended strategy;
+    public ClassifierStrategy cs;
+    public DistanceStrategy ds;
 
-    public ContextExtended(StrategyExtended strategy) {
-        this.strategy = strategy;
+    public ContextExtended() {
     }
 
-    public void setClassifierStrategy(StrategyExtended strategy) {
-        this.strategy = strategy;
+    public void setClassifierStrategy(ClassifierStrategy str) {
+        this.cs = str;
+    }
+
+    public void setDistanceStrategy(DistanceStrategy str) {
+        this.ds = str;
     }
 
     public void run() {
-        strategy.execute();
+        cs.execute(ds);
     }
 }
