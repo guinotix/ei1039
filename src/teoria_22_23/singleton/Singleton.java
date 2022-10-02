@@ -4,7 +4,7 @@ public class Singleton {
 
     private static Object objetoUnico;
 
-    public Singleton() {
+    private Singleton() {
         objetoUnico = new Object();
     }
 
