@@ -3,18 +3,18 @@ package teoria_22_23.command;
 
 public class Invoker {
 
-    Command c;
+    History history;
 
     public Invoker() {
+        history = new History();
     }
 
     public void setCommand(Command c) {
-        this.c = c;
+        this.history.add(c);
     }
 
-    // método que ejecuta la operación
-    public void presionarBoton() {
-        this.c.execute();
+    public void ejecutar() {
+        history.startExecution();
     }
 
 }
