@@ -13,6 +13,10 @@ public class Invoker {
         this.history.add(c);
     }
 
+    public void undoCommand() {
+        this.history.removeLast();
+    }
+
     public void ejecutar() {
         history.startExecution();
     }

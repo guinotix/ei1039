@@ -6,25 +6,20 @@ public class DemoCommand {
         Invoker invoker = new Invoker();
         Receiver rec = new Receiver();
 
-        rec.operation("FBLR");
+        rec.operation("FBLRDI");
 
         Move forward = new Move(rec, 'F');
         Turn left = new Turn(rec, 'L');
         Turn right = new Turn(rec, 'R');
+        Deshacer undo = new Deshacer(rec, 'D');
+        Iniciar start = new Iniciar(rec, 'I');
 
         invoker.setCommand(forward);
-        invoker.presionarBoton();
-
         invoker.setCommand(left);
-        invoker.presionarBoton();
-
         invoker.setCommand(forward);
-        invoker.presionarBoton();
-
         invoker.setCommand(forward);
-        invoker.presionarBoton();
-
         invoker.setCommand(right);
-        invoker.presionarBoton();
+        invoker.ejecutar();
+
     }
 }
